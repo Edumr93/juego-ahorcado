@@ -11,6 +11,52 @@ area.arc(182,100,30,0,2*Math.PI);
 area.fill();
 area.closePath();
 
+
+//HORCA
+//SOGA
+area.beginPath();
+area.lineWidth = 15
+area.moveTo(182, 30);
+area.lineTo(182, 100);
+area.stroke();
+area.closePath();
+
+
+//HORCA PRIMER PALO
+area.beginPath();
+area.lineWidth = 15
+area.moveTo(80, 35);
+area.lineTo(190, 35);
+area.stroke();
+area.closePath();
+
+//HORCA PALO DOS
+area.beginPath();
+area.lineWidth = 15
+area.moveTo(90, 30);
+area.lineTo(90, 300);
+area.stroke();
+area.closePath();
+
+//HORCA BASE
+area.beginPath();
+area.lineWidth = 15
+area.moveTo(60, 300);
+area.lineTo(120, 300);
+area.stroke();
+area.closePath();
+
+//LINEA ROJA
+area.beginPath();
+area.lineWidth = 8;
+area.moveTo(150, 130);
+area.lineTo(210, 130);
+area.fillStyle = "red";
+area.fill();
+area.stroke();
+area.closePath();
+
+
 // tronco cuerpo
 area.beginPath();
 area.lineWidth = 15
@@ -18,6 +64,8 @@ area.moveTo(182, 100);
 area.lineTo(182, 230);
 area.stroke();
 area.closePath();
+
+
 
 //brazo derecho
 area.beginPath();
