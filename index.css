@@ -7,12 +7,33 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: rgb(237, 237, 237);
 }
+
+
 
 .cabecera{
     height: 50px;
     width: 50px;
     background-color: red;    
+}
+#letrasCaja a{
+    font-weight: bold;
+    font-size: 3em;
+    margin: 10px;
+}
+
+#guionesCaja a{
+    font-weight: bold;
+    font-size: 3em;
+    margin-right:  10px;
+    margin-left: 10px;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 0;
+    height: 0.5px;
+    width: 0.5px;
+    
 }
 
 
