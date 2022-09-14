@@ -72,13 +72,27 @@ function letras(letra){
 
 }
 function guiones(){
-    let etiqueta = document.createElement("a");
+    let etiqueta = document.createElement("span");
     let contenido = document.createTextNode("_");
     etiqueta.appendChild(contenido);
     let cajaGuiones = document.getElementById("guionesCaja").appendChild(etiqueta);
 
 }
 
+function botonesLetra(){
+    const abecedario = "ABCDEFGHIJKLMNÑOPQRSTUVWXYZ"
+    const cajaLetras = document.getElementById("botonesLetras");
+
+    for(let i = 0; i < abecedario.length; i++){
+        let etiqueta = document.createElement("input")
+        etiqueta.type = "button";
+        etiqueta.value = abecedario.charAt(i);
+        cajaLetras.appendChild(etiqueta);
+    }
+    
+}
+
+botonesLetra();
 
 //lineas letras
 /*
