@@ -102,20 +102,35 @@ area.closePath();
 
 //LOGICA DEL JUEGO
 
-let palabra = "quehace";
+let palabras = ["que", "hola", "programacion", "alura", "manzana", "pera", "frutilla"];
 
 
-for(let i = 0; i < palabra.length; i++){
-    letras(palabra.substring(i,i+1));
-    guiones();
+function comenzarJuego(){
+
+    
+    const cajaGuiones = document.getElementById("guionesCaja");
+    cajaGuiones.innerHTML = "";
+    obtenerPalabraAleatoria();
+
+}
+
+function obtenerPalabraAleatoria(){
+
+    palabra = palabras[Math.floor(Math.random()*palabras.length)];
+
+    console.log(palabra)
+
+    for(let i = 0; i < palabra.length; i++){
+        letras(palabra.substring(i,i+1));
+        guiones();
+    }
 }
 
 function letras(letra){
     let etiqueta = document.createElement("a");
     let contenido = document.createTextNode(letra);
-    
     etiqueta.appendChild(contenido);
-
+    etiqueta.style.display = "none";
     const cajaLetras = document.getElementById("letrasCaja").appendChild(etiqueta);
 
 }
