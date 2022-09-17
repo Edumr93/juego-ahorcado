@@ -103,34 +103,44 @@ area.closePath();
 //LOGICA DEL JUEGO
 
 let palabras = ["que", "hola", "programacion", "alura", "manzana", "pera", "frutilla"];
-
+let palabraSorteada = "";
+const cajaGuiones = document.getElementById("guionesCaja");
+const cajaLetras = document.getElementById("letrasCaja");
+const cajaBotones = document.getElementById("botonesLetras");
 
 function comenzarJuego(){
-
-    
-    const cajaGuiones = document.getElementById("guionesCaja");
     cajaGuiones.innerHTML = "";
+    cajaLetras.innerHTML = "";
+    cajaBotones.innerHTML = "";
+
     obtenerPalabraAleatoria();
+    botonesLetra();
+    letrasFuncionalidad;
+
+}
+
+function comparacionLetras(){
 
 }
 
 function obtenerPalabraAleatoria(){
 
-    palabra = palabras[Math.floor(Math.random()*palabras.length)];
+    palabraSorteada = palabras[Math.floor(Math.random()*palabras.length)];
 
-    console.log(palabra)
+    console.log(palabraSorteada)
 
-    for(let i = 0; i < palabra.length; i++){
-        letras(palabra.substring(i,i+1));
+    for(let i = 0; i < palabraSorteada.length; i++){
+        letras(palabraSorteada.substring(i,i+1));
         guiones();
     }
 }
 
 function letras(letra){
     let etiqueta = document.createElement("a");
+    etiqueta.id = letra;
     let contenido = document.createTextNode(letra);
     etiqueta.appendChild(contenido);
-    etiqueta.style.display = "none";
+    //etiqueta.style.display = "none";
     const cajaLetras = document.getElementById("letrasCaja").appendChild(etiqueta);
 
 }
@@ -142,6 +152,7 @@ function guiones(){
 
 }
 
+
 function botonesLetra(){
     const abecedario = "ABCDEFGHIJKLMNÑOPQRSTUVWXYZ"
     const cajaLetras = document.getElementById("botonesLetras");
@@ -149,13 +160,26 @@ function botonesLetra(){
     for(let i = 0; i < abecedario.length; i++){
         let etiqueta = document.createElement("input")
         etiqueta.type = "button";
+        etiqueta.id = abecedario.charAt(i);
         etiqueta.value = abecedario.charAt(i);
         cajaLetras.appendChild(etiqueta);
+        letrasFuncionalidad(abecedario.charAt(i));
     }
     
 }
 
-botonesLetra();
+function letrasFuncionalidad(letras){
+
+    let botones = document.getElementById(letras).addEventListener("click", function(){
+
+        alert("Apretaste la letra: " + letras);
+
+    })
+    
+    
+
+}
+
 
 //lineas letras
 /*
